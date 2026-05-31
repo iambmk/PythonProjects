@@ -11,11 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Updated to v6 to support Node 24 natively
+    # Updated to v6 to natively support Node 24
     - name: Checkout repository code
       uses: actions/checkout@v6
 
-    # Updated to v6 to support Node 24 natively
+    # Updated to v6 to natively support Node 24
     - name: Set up Python
       uses: actions/setup-python@v6
       with:
