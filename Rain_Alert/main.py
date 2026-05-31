@@ -29,4 +29,4 @@ if will_rain:
         from_="+14243527208",
         to='+917893449664',
     )
-print(message.status)
+# print(message.status)
