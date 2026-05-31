@@ -29,4 +29,8 @@ jobs:
 
     - name: Run Python script
       working-directory: ./Rain_Alert
+      env:
+        OWM_API_KEY: ${{ secrets.OWM_API_KEY }}
+        ACCOUNT_SID: ${{ secrets.ACCOUNT_SID }}
+        TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
       run: python main.py
