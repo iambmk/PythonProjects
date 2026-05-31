@@ -1,4 +1,4 @@
-
+import os
 OWM_ENDPOINT = "https://api.openweathermap.org/data/2.5/forecast"
 api_key = os.environ.get("OWM_API_KEY")
 account_sid = os.environ.get("ACCOUNT_SID")
