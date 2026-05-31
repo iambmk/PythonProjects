@@ -2,9 +2,8 @@ name: Run Scheduled Python Script
 
 on:
   schedule:
-    # This example runs every day at 12:00 UTC
+    # Runs every day at 12:00 UTC (5:30 PM IST)
     - cron: '0 12 * * *'
-  # Allows you to manually trigger the workflow from the Actions tab
   workflow_dispatch: 
 
 jobs:
@@ -18,12 +17,20 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: '3.10' # Specify your preferred Python version
+        python-version: '3.14'
 
+    # Added working-directory so it finds your requirements.txt inside Rain_Alert
     - name: Install dependencies
+      defaults:
+        run:
+          working-directory: ./Rain_Alert
       run: |
         python -m pip install --upgrade pip
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
+    # Added working-directory so it executes main.py inside Rain_Alert
     - name: Run Python script
+      defaults:
+        run:
+          working-directory: ./Rain_Alert
       run: python main.py
